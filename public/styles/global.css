@@ -17,6 +17,43 @@ html {
     font-size: 62.5%;
 }
 
+.header{
+    width: 100%;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins';
+    
+
+}
+.header a{
+    color: var(--blue-baby);
+    font-size: 5rem;
+    margin-left: 2rem;
+}
+
+.header nav {
+    float: right;
+    margin-right: 2rem;
+
+}
+
+.header nav ul{
+    list-style: none;
+}
+
+.header nav ul li{
+    display: inline-block;
+}
+.header nav ul li a{
+    font-size: 2rem;
+    transition: .2s all;
+}
+.header nav ul li a:hover{
+    color: aquamarine;
+}
+
 body {
     background: var(--blue);
 }

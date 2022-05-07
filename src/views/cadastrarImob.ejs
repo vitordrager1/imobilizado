@@ -16,43 +16,26 @@
 </head>
 
 <body>
-    <div id="home " class="content ">
-        <header>
-            <a href="index.html">COMOB - Controle de Imobilizados</a>
-        </header>
+    <header>
+        <%- include(`parts/header`)  %>
+    </header>
 
-        <div id="bg ">
-            <div class="ball top "></div>
-            <div class="ball bottom "></div>
-        </div>
-        <div class="space"></div>
-        <div class="container">
-            <div class="pesquisa">
-                <h1> Cadastrar Imobilizado</h1>
-
-            </div>
-            <div class="space"></div>
-
-            <div class="teste">
-                <form action="/create-imob" method="POST">
-                    <label for="imobilizado">Digite o imobilizado</label>
-                    <input id="imobilizado" type="number" name="imobilizado" placeholder="">
-                    <label for="descricao">Digite a descrição</label>
-                    <input id="descricao" type="text" name="descricao" placeholder="">
-                    <label for="marca">Digite a marca</label>
-                    <input id="marca" type="text" name="marca" placeholder="">
-                    <input type="submit" value="Cadastrar">
-                </form>
-
-            </div>
-
-        </div>
-
+    <div class="teste">
+        <form action="/create-imob" method="POST">
+            <label for="imobilizado">Digite o imobilizado</label>
+            <input id="imobilizado" type="number" name="imobilizado" placeholder="">
+            <label for="descricao">Digite a descrição</label>
+            <input id="descricao" type="text" name="descricao" placeholder="">
+            <label for="marca">Digite a marca</label>
+            <input id="marca" type="text" name="marca" placeholder="">
+            <input type="submit" value="Cadastrar">
+        </form>
     </div>
-
 
 
 
 </body>
 
 </html>
+
+
