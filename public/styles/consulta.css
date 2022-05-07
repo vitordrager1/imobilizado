@@ -52,15 +52,3 @@ h2 {
     margin: 20px 0;
 }
 
-.teste form {
-    width: 70%;
-    margin: auto;
-    background-color: var(--grey-blue);
-    display: flex;
-    flex-direction: column;
-}
-
-.teste form label {
-    font-family: 'Poppins';
-    font-size: 2rem;
-}

@@ -1,0 +1,28 @@
+main{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background: rgba(255, 255, 255, 38%);
+    border-radius: 3.3rem;
+    padding: 5rem;
+}
+
+
+
+
+
+
+
+
+
+.teste form {
+    width: 70%;
+    margin: auto;
+    background-color: var(--grey-blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.teste form label {
+    font-family: 'Poppins';
+    font-size: 2rem;
+}
