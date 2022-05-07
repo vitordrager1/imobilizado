@@ -1,0 +1,66 @@
+body {
+    background-color: var(--background);
+}
+
+.container {
+    width: 80%;
+    margin: 3.5rem auto;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container .pesquisa {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .pesquisa form {
+    font-family: 'Poppins';
+    font-size: 2rem;
+}
+
+button {
+    display: inline;
+    padding: 2rem;
+}
+
+table {
+    width: 100%;
+    margin: 30px 0;
+}
+
+thead {
+    background-color: var(--grey-blue);
+    color: var(--black);
+    font-family: 'Poppins';
+}
+
+table td {
+    padding: 5px;
+}
+
+tbody td {
+    font-family: 'Opens Sans';
+    background-color: var(--grey-blue);
+    color: var(--overlay);
+}
+
+h2 {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.teste form {
+    width: 70%;
+    margin: auto;
+    background-color: var(--grey-blue);
+    display: flex;
+    flex-direction: column;
+}
+
+.teste form label {
+    font-family: 'Poppins';
+    font-size: 2rem;
+}

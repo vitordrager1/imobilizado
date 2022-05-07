@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    --black: #000000;
+    --purple: #7000FF;
+    --white: #FFFFFF;
+    --blue: #A8C9C9;
+    --grey: #C4C4C4;
+    --blue-baby: #00FFFF;
+    /* 1 rem = 16px do navegador */
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--blue);
+}
+
+input,
+button,
+.button {
+    height: 5rem;
+    border-radius: 3rem;
+    width: 40rem;
+    padding: 2rem;
+}
+
+input,
+button,
+.button {
+    font-family: 'Poppins', 'opens sans';
+    font-weight: 500;
+    line-height: 0;
+    align-items: center;
+    color: var(--black);
+    transition: filter .5s;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    background: var(--purple);
+}
+
+button,
+.button {
+    background: var(--white);
+    border: 2px solid var(--purple);
+}
+
+button:hover,
+.button:hover {
+    filter: brightness(1.2);
+}
+
+button.outlined,
+.button.outlined {
+    background: var(--white);
+    color: var(--blue);
+    border: .2rem solid var(--blue);
+}
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.space {
+    width: 100%;
+    height: 1rem;
+    margin-bottom: 10rem;
+}

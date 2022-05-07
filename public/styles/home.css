@@ -1,0 +1,58 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+
+.content .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--purple);
+    width: 25vw;
+    height: 50vh;
+    background: rgba(255, 255, 255, 38%);
+    border-radius: 3.3rem;
+}
+
+.content .login-wrapper h1 {
+    margin-bottom: 4rem;
+    color: var(--purple);
+}
+
+.content .login-wrapper .login {
+    text-align: center;
+}
+
+.content .login-wrapper .login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .login-wrapper .login form input,
+.content .login-wrapper .login form button {
+    margin-bottom: 2rem;
+}
+
+.content .login-wrapper .register {
+    margin-top: 4rem;
+}
+
+.content .login-wrapper .register a {
+    text-align: center;
+}
+
+.separate {
+    background: var(--purple);
+    width: 100%;
+    height: 5px;
+}

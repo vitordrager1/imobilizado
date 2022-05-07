@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel=" stylesheet " href="styles/consulta.css ">
+    <link rel="preconnect " href="https://fonts.googleapis.com ">
+    <link rel="preconnect " href="https://fonts.gstatic.com " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredericka+the+Great&family=Monoton&family=Open+Sans:wght@300;400&family=Poppins:wght@500;700&display=swap " rel="stylesheet ">
+
+    <title>COMOB - Consulta Imobilizado</title>
+</head>
+
+<body>
+    <div id="home " class="content ">
+        <header>
+            <a href="index.html">COMOB - Controle de Imobilizados</a>
+        </header>
+
+        <div id="bg ">
+            <div class="ball top "></div>
+            <div class="ball bottom "></div>
+        </div>
+        <div class="space">.</div>
+        <div class="container">
+            <div class="pesquisa">
+                <h1> Consulta por Imobilizado</h1>
+                <form name="imobilizado" method="post" action="">
+                    <label for="imobilizado">IMOBILIZADO: </label>
+                    <input type="number" name="imobilizado" id="imobilizado" required>
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Imobilizado</td>
+                        <td>Descrição</td>
+                        <td>Marca</td>
+                        <td>Unidade Atual</td>
+                        <td>Local Atual</td>
+                        <td>R.A</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>136546</td>
+                        <td>Notebook Dell Vostro v2 intel pentium 2.2ghz 4gb Ram placa de vídeo integrada</td>
+                        <td>Dell</td>
+                        <td>Filial 1</td>
+                        <td>Departamento TI</td>
+                        <td>21.4854-2</td>
+
+                        <td>
+                            <form action="">
+                                <a href="/cadastrarImob">Cadastrar</a>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
