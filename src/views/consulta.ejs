@@ -16,26 +16,12 @@
 </head>
 
 <body>
-    <div id="home " class="content ">
-        <header>
-            <a href="index.html">COMOB - Controle de Imobilizados</a>
-        </header>
-
-        <div id="bg ">
-            <div class="ball top "></div>
-            <div class="ball bottom "></div>
-        </div>
-        <div class="space">.</div>
-        <div class="container">
-            <div class="pesquisa">
-                <h1> Consulta por Imobilizado</h1>
-                <form name="imobilizado" method="post" action="">
-                    <label for="imobilizado">IMOBILIZADO: </label>
-                    <input type="number" name="imobilizado" id="imobilizado" required>
-                    <button type="submit">Pesquisar</button>
-                </form>
-            </div>
-
+    <header>
+        <%- include('parts/header')  %> 
+    </header>
+    
+    <main>
+        <div class="content">
             <table>
                 <thead>
                     <tr>
@@ -66,9 +52,8 @@
 
             </table>
         </div>
-
-    </div>
-
+    </main>
+    
 
 
 

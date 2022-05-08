@@ -20,28 +20,35 @@
     <header>
         <%- include(`parts/header`)  %>
     </header>
-    <div class="space"></div>
     <main>
-        <div class="cancel">
-            <button>CANCELAR</button>
-        </div>
-        <div class="content">
-            <h1>CADASTRO DE IMOBILIZADO</h1>
-            <div class="teste">
-                <form action="/create-imob" method="POST">
-                    <label for="imobilizado">Digite o imobilizado</label>
-                    <input id="imobilizado" type="number" name="imobilizado" placeholder="">
-                    <label for="descricao">Digite a descrição</label>
-                    <input id="descricao" type="text" name="descricao" placeholder="">
-                    <label for="marca">Digite a marca</label>
-                    <input id="marca" type="text" name="marca" placeholder="">
-                    <input type="submit" value="Cadastrar">
-                </form>
+    
+        <form action="/create-imob" method="POST">
+         
+            <div class="content">
+                <h1>CADASTRO DE IMOBILIZADO</h1>
+
+                <label for="imobilizado">Digite o imobilizado</label>
+                <input id="imobilizado" type="number" name="imobilizado" placeholder="">
+                <label for="descricao">Digite a descrição</label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                <label for="marca">Digite a marca</label>
+                <input id="marca" type="text" name="marca" placeholder="">
             </div>
-        </div>
-        <div class="register">
-            <button>CADASTRAR</button>
-        </div>
+          
+
+            <div class="register-cancel">
+                <button>CADASTRAR</button>
+                <div class="button">
+                    <a href="/">Cancelar</a>
+                </div>
+
+            </div>
+ 
+          
+
+        </form>
+  
+    
     </main>
 
   

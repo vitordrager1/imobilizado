@@ -63,7 +63,6 @@ button,
 .button {
     height: 5rem;
     border-radius: 3rem;
-    width: 40rem;
     padding: 2rem;
 }
 
@@ -74,14 +73,22 @@ button,
     font-weight: 500;
     line-height: 0;
     align-items: center;
-    color: var(--black);
     transition: filter .5s;
     cursor: pointer;
     outline: none;
+    font-size: 2rem;
+ 
+
 }
 
 input {
     background: var(--purple);
+    color: var(--white);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 button,
@@ -93,6 +100,19 @@ button,
 button:hover,
 .button:hover {
     filter: brightness(1.2);
+}
+
+textarea{
+    font-family: Poppins;
+    font-size: 2rem;
+    width: 100%;
+    outline: none;
+    resize: none;
+    background: var(--purple);
+    color: var(--white);
+    border-radius: 3rem;
+    padding: 2rem;
+
 }
 
 button.outlined,
