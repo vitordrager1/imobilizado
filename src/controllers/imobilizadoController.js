@@ -21,6 +21,14 @@ module.exports ={
 
         res.redirect(`/consulta`)
 
+    },
+    async pesquisar(req, res){
+        const db = await Database()
+        const sql = await db.all(`SELECT * FROM imobilizado`)
+
+        res.render("consulta", {sql})
+        
     }
+
 
 }

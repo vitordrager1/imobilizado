@@ -27,7 +27,6 @@
                         <td>Imobilizado</td>
                         <td>Descrição</td>
                         <td>Marca</td>
-                
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +36,7 @@
                             <td><%= sqls.id %></td>
                             <td><%= sqls.descricao  %> </td>
                             <td><%= sqls.marca  %> </td>
-                            <td><a href="#">Alterar</a></td>
+                            <td><a href="/alterar/:sqls.id">Alterar</a></td>
                         </tr>
                     <% }); %>
                 </tbody>
@@ -47,7 +46,7 @@
     </main>
     
 
-    <script src="/public/scripts/consulta.js"></script>
+ 
 
 
 </body>

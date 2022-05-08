@@ -26,4 +26,14 @@ table tbody td{
     font-size: 2rem;
     color: var(--black);
     padding: 2rem 0rem 0rem 1rem;
+    word-break: break-all;
 }
+
+table tbody td:nth-child(1){
+    width: 200px;
+}
+table tbody td:nth-child(2){
+    width: 70rem;
+    padding: 2rem 1rem 0rem 1rem;
+}
+
