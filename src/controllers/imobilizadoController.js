@@ -28,6 +28,14 @@ module.exports ={
 
         res.render("consulta", {sql})
         
+    },
+
+    async alterar(req, res){
+        const db = await Database()
+        const id = req.body.sql
+        console.log(id)
+        
+        res.render("alterar",{id})
     }
 
 

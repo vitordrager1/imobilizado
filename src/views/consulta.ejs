@@ -33,10 +33,10 @@
                     
                     <% sql.forEach(sqls => { %>
                         <tr>
-                            <td><%= sqls.id %></td>
+                            <td id="imob"><%= sqls.id %></td>
                             <td><%= sqls.descricao  %> </td>
                             <td><%= sqls.marca  %> </td>
-                            <td><a href="/alterar/:sqls.id">Alterar</a></td>
+                            <td><a href="/alterar">Alterar</a></td>
                         </tr>
                     <% }); %>
                 </tbody>
