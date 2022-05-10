@@ -32,10 +32,10 @@ module.exports ={
 
     async alterar(req, res){
         const db = await Database()
-        const id = req.body.sql
-        console.log(id)
-        
-        res.render("alterar",{id})
+        const id = req.params.imob
+        res.render("alterar", {id})
+
+      
     }
 
 

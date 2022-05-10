@@ -11,10 +11,22 @@
     <link rel="preconnect " href="https://fonts.googleapis.com ">
     <link rel="preconnect " href="https://fonts.gstatic.com " crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredericka+the+Great&family=Monoton&family=Open+Sans:wght@300;400&family=Poppins:wght@500;700&display=swap " rel="stylesheet ">
+    
+    <script src="/scripts/main.js" defer type="module"></script>
+
+
     <title>COMOB - Consulta Imobilizado</title>
 </head>
 
 <body>
+    <script>
+        function sendId(e){
+            const id = e.target.dataset.id
+    
+            window.localStorage.setItem('imob', `${id}`)
+            
+        }
+    </script>
     <header>
         <%- include('parts/header')  %> 
     </header>
@@ -33,10 +45,10 @@
                     
                     <% sql.forEach(sqls => { %>
                         <tr>
-                            <td id="imob"><%= sqls.id %></td>
+                            <td id="<%= sqls.id %>" data-id="<%=sqls.id%>"><%= sqls.id %></td>
                             <td><%= sqls.descricao  %> </td>
                             <td><%= sqls.marca  %> </td>
-                            <td><a href="/alterar">Alterar</a></td>
+                            <td> <a href="/alterar/<%= sqls.id  %> "> Alterar</a> </td>
                         </tr>
                     <% }); %>
                 </tbody>
