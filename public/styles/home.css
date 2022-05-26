@@ -8,6 +8,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     width: 70%;
     margin: auto;
 }
@@ -21,10 +22,11 @@ main {
     width: 25vw;
     height: 50vh;
     background: rgba(255, 255, 255, 38%);
-    border-radius: 3.3rem;
+    border-radius: 1rem;
 }
 
 .content .login-wrapper h1 {
+    font-family: 'Poppins';
     margin-bottom: 4rem;
     color: var(--purple);
 }
@@ -36,6 +38,7 @@ main {
 .content .login-wrapper .login form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 
 .content .login-wrapper .login form input,
@@ -52,7 +55,7 @@ main {
 }
 
 .separate {
-    background: var(--purple);
+    background: var(--gray);
     width: 100%;
     height: 5px;
 }

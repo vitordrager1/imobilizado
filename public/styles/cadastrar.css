@@ -1,37 +1,29 @@
 main{
     width: 90%;
     margin: auto;
-    background: rgba(255, 255, 255, 38%);
+    background: var(--white);
     border-radius: 3.3rem;
     padding: 5rem;
-    border: 2px solid var(--purple);
     margin-top: 2rem;
 }
 
 
 main form{
-    display: grid;
-    grid-template-columns: 70% 30%;
-
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 main form label {
-    font-family: 'Poppins';
+    font-family: 'Poppins', Arial;
     font-size: 2rem;
 }
 
-main form .content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
 main .content h1{
     font-size: 4rem;
-    font-family: 'Poppins', 'Opens Sans';
+    font-family: 'Poppins', Arial;
     margin-bottom: 2rem;
     
 }
@@ -49,22 +41,19 @@ main form .content textarea{
 
 .buttons{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .buttons button{
-    margin-bottom: 2rem;
+    margin-right: 5rem;
+
 }
+
 
 .buttons a{
     color: var(--black);
 
-}
-
-main button, .button{
-    width: 70%;
 }
 
 
