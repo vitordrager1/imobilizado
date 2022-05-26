@@ -47,18 +47,18 @@ main form .content textarea{
 
 }
 
-.register-cancel{
+.buttons{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.register-cancel button{
+.buttons button{
     margin-bottom: 2rem;
 }
 
-.register-cancel a{
+.buttons a{
     color: var(--black);
 
 }

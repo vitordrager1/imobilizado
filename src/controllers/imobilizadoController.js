@@ -1,7 +1,7 @@
 const Database = require("../db/config")
 
 module.exports ={
-    async cadastrar(req, res){
+    async create(req, res){
         const db = await Database()
         
         const imobilizado = req.body.imobilizado
@@ -19,23 +19,38 @@ module.exports ={
 
         await db.close()
 
-        res.redirect(`/consulta`)
+        res.redirect(`/list-imob`)
 
     },
-    async pesquisar(req, res){
+    async list(req, res){
         const db = await Database()
         const sql = await db.all(`SELECT * FROM imobilizado`)
 
-        res.render("consulta", {sql})
+        res.render("list-imob", {sql})
         
     },
 
-    async alterar(req, res){
+    async alter(req, res){
         const db = await Database()
         const id = req.params.imob
-        res.render("alterar", {id})
+        const sql = await db.all(`SELECT * FROM imobilizado WHERE id = ${id}`)
+
+        await db.close();
+        res.render("alter-imob", {sql})
 
       
+    },
+
+    async update(req,res){
+        const db = await Database()
+        const id = req.params.imob
+        const descricao = req.body.descricao
+        const marca = req.body.marca
+        await db.run(`UPDATE imobilizado SET descricao = "${descricao}", marca = "${marca}" WHERE id = "${id}"`);
+
+        await db.close()
+
+        res.redirect("/list-imob")
     }
 
 

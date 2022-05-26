@@ -6,42 +6,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/cadastrar.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/cadastrar.css">
 
     <link rel="preconnect " href="https://fonts.googleapis.com ">
     <link rel="preconnect " href="https://fonts.gstatic.com " crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fredericka+the+Great&family=Monoton&family=Open+Sans:wght@300;400&family=Poppins:wght@500;700&display=swap " rel="stylesheet ">
 
-    <title>SISMOB - Cadastro Imobilizado</title>
+
+    <title>SISMOB - Alterar Imobilizado</title>
 </head>
 
 <body>
+
+
+
     <header>
         <%- include(`parts/header`)  %>
     </header>
     <main>
     
-        <form action="/create-imob" method="POST">
+        <form action="/update-imob/<%= sql[0].id%>" method="POST">
          
             <div class="content">
-                <h1>CADASTRO DE IMOBILIZADO</h1>
+                <h1>ALTERAR DADOS DO IMOBILIZADO</h1>
 
-                <label for="imobilizado">Digite o imobilizado</label>
-                <input id="imobilizado" type="number" name="imobilizado" placeholder="">
+                <div class="imob"> <%= sql[0].id  %>    </h1></div>
                 <label for="descricao">Digite a descrição</label>
-                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                <input id="descricao" type="text" name="descricao" value="<%= sql[0].descricao %>">
                 <label for="marca">Digite a marca</label>
-                <input id="marca" type="text" name="marca" placeholder="">
+                <input id="marca" type="text" name="marca" value="<%=sql[0].marca%>">
             </div>
           
 
-            <div class="register-cancel">
-                <button>CADASTRAR</button>
-                <div class="button">
-                    <a href="/">Cancelar</a>
-                </div>
-
+            <div class="buttons">
+                <button>ALTERAR</button>
+                <div class="button"><a href="/list-imob">Cancelar</a></div>
             </div>
  
           
