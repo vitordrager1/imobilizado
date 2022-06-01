@@ -1,12 +1,25 @@
 module.exports = class Pessoa{
 
-    constructor(id, nome, idade){
+    constructor(id, name, role, email){
         this.id = id
-        this.nome = nome
-        this.idade = idade
+        this.name = name
+        this.role = role
+        this.email = email
+    }
+
+    getId(){
+        return this.id
     }
 
     getName(){
-        return this.nome
+        return this.name
+    }
+
+    getRole(){
+        return this.role
+    }
+
+    getEmail(){
+        return this.email
     }
 }

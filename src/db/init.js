@@ -10,6 +10,13 @@ const initDb = {
             marca TEXT
         )`);
 
+        await db.exec(`CREATE TABLE user (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT,
+            cargo TEXT,
+            email TEXT
+        )`)
+
         await db.close()
     }
 }
