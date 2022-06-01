@@ -14,8 +14,11 @@ const initDb = {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT,
             cargo TEXT,
-            email TEXT
+            email TEXT,
+            senha TEXT
         )`)
+
+        await db.run(`INSERT INTO user(id,nome,cargo,email,senha)VALUES(1000,'name','cargo','email','senha')`)
 
         await db.close()
     }
