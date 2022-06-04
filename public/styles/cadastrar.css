@@ -9,25 +9,36 @@ main{
 
 
 main form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    
 }
 main form label {
     font-family: 'Poppins', Arial;
     font-size: 2rem;
+    display: block;
 }
 
 
-main .content h1{
+form .full-width{
+    grid-column: 1/4;
+}
+
+
+form .b-full-width{
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-between;
+}
+
+main h1{
     font-size: 4rem;
     font-family: 'Poppins', Arial;
     margin-bottom: 2rem;
     
 }
-
+/* 
 main form .content input{
     width: 100%;
     margin-bottom: 2rem;
@@ -37,9 +48,9 @@ main form .content textarea{
 
     margin-bottom: 2rem;
 
-}
+} */
 
-.buttons{
+/* .buttons{
     display: flex;
     justify-content: space-between;
 
@@ -54,7 +65,7 @@ main form .content textarea{
 .buttons a{
     color: var(--black);
 
-}
+} */
 
 
 

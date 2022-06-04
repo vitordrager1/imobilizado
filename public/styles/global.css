@@ -7,7 +7,6 @@
 }
 
 html {
-
     --white: #F2F2F2;
     --gray: #A6A6A6;
     --gray-dark: #8C8C8C;
@@ -23,41 +22,41 @@ html {
     font-size: 62.5%;
 }
 
-.header{
+.header {
     width: 100%;
     background-color: var(--dark-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Poppins';
-    
-
 }
-.header a{
-    color: var(--dark);
-    font-size: 5rem;
-    margin-left: 2rem;
+
+.header a {
+    font-size: 5rem;   
 }
 
 .header nav {
     float: right;
     margin-right: 2rem;
-
 }
 
-.header nav ul{
+.header nav ul {
     list-style: none;
 }
 
-.header nav ul li{
+.header nav ul li {
     display: inline-block;
 }
-.header nav ul li a{
+
+.header nav ul li a {
     font-size: 2rem;
     transition: .2s all;
-}
-.header nav ul li a:hover{
     color: var(--white);
+    margin-left: 2rem;
+}
+
+.header nav ul li a:hover {
+    color: var(--gray);
 }
 
 body {
@@ -68,8 +67,13 @@ input,
 button,
 .button {
     height: 5rem;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     padding: 2rem;
+}
+
+input{
+    width: 100%;
+
 }
 
 input,
@@ -79,38 +83,49 @@ button,
     font-weight: 500;
     line-height: 0;
     align-items: center;
-    transition: filter .5s;
     cursor: pointer;
     outline: none;
-    font-size: 2rem; 
+    font-size: 2rem;
 }
-.button a{
-    color: var(--dark);
 
+button a,
+.button a {
+    color: var(--white);
 }
 
 input {
     background: var(--gray);
     color: var(--dark);
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 button,
 .button {
     background: var(--dark-light);
     border: 2px solid var(--dark);
+    color: var(--white);
 }
 
 button:hover,
 .button:hover {
     filter: brightness(1.2);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-textarea{
+button:active,
+.button:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: var(--dark);
+}
+
+textarea {
     font-family: Poppins;
     font-size: 2rem;
     width: 100%;
@@ -118,9 +133,7 @@ textarea{
     resize: none;
     background: var(--gray);
     color: var(--dark);
-    border-radius: 1rem;
     padding: 2rem;
-
 }
 
 button.outlined,

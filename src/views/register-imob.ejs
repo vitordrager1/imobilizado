@@ -20,29 +20,64 @@
     <header>
         <%- include(`parts/header`)  %>
     </header>
+    
     <main>
+        <p><h1>CADASTRO DE IMOBILIZADO</h1></p>
+
     
         <form action="/create-imob" method="POST">
-         
-            <div class="content">
-                <h1>CADASTRO DE IMOBILIZADO</h1>
 
+            <p>
                 <label for="imobilizado">Digite o imobilizado</label>
                 <input id="imobilizado" type="number" name="imobilizado" placeholder="">
+            </p>
+
+            <p>
+                <label for="id_categoria">Selecione a categoria</label>
+                <input id="id_categoria" type="text" name="id_categoria" placeholder="">
+            </p>
+
+            <p>
+                <label for="numeroSerie">Numero de Série</label>
+                <input id="numeroSerie" type="text" name="numeroSerie" placeholder="">
+            </p>
+            
+            <p>
+                <label for="notaFiscal">Nota Fiscal</label>
+                <input id="notaFiscal" type="text" name="notaFiscal" placeholder="">
+            </p>
+            <p>
+                <label for="dataCompra">Data da compra</label>
+                <input id="dataCompra" type="text" name="dataCompra" placeholder="">
+            </p>
+            <p>
+                <label for="valorCompra">Valor da compra</label>
+                <input id="valorCompra" type="text" name="valorCompra" placeholder="">
+            </p>
+            
+            <p class="full-width">
                 <label for="descricao">Digite a descrição</label>
-                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
-                <label for="marca">Digite a marca</label>
-                <input id="marca" type="text" name="marca" placeholder="">
-            </div>
+                <textarea name="descricao" id="descricao" cols="20" rows="5"></textarea>
+            </p>
+            <p class="b-full-width">
+                <button>Cadastrar</button>
+                <button> <a href="/">Cancelar</a></button>    
+            </p>
+            
+            
+            <!-- <div class="content">
+                
+                
+            </div> -->
           
 
-            <div class="buttons">
+            <!-- <div class="buttons">
                 <button>CADASTRAR</button>
                 <div class="button">
                     <a href="/">Cancelar</a>
                 </div>
 
-            </div>
+            </div> -->
  
           
 
