@@ -38,17 +38,14 @@ class Pessoa  {
 
 class Funcionario extends Pessoa {
 
-    constructor(idPessoa, idDepartamento, idCargo, dataAdmissao, senha){
-        this.idPessoa = idPessoa
+    constructor(idPessoa,nomePessoa,idadePessoa,cpf, idDepartamento, idCargo, dataAdmissao, senha){
+        super(idPessoa,nomePessoa,idadePessoa,cpf)
         this.idDepartamento = idDepartamento
         this.idCargo = idCargo
         this.dataAdmissao = dataAdmissao
         this.senha = senha
     }
 
-    getIdPessoa(){
-        return this.idPessoa;
-    }
 
     getIdDepartamento(){
         return this.idDepartamento;

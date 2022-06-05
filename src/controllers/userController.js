@@ -4,45 +4,57 @@
 
 // console.log(user)
 
-const Database = require("../db/config")
+const db = require("../db/config")
+const matricula = require("../../public/scripts/user")
 const {Pessoa, Funcionario, Endereco, Cargo, Departamento} = require ("../../public/scripts/class")
 
 
 module.exports ={
     async create(req, res){
-        const db = await Database()
         
-        const name = req.body.name
-        const role = req.body.role
-        const email = req.body.email
-        const pass = req.body.password
+        const nome = req.body.nome
+        const idade = req.body.idade
+        const cpf = req.body.cpf
+        const idDepartamento = req.body.idDepartamento
+        const idCargo = req.body.idCargo
+        const dataAdmissao = req.body.dataAdmissao
+        const senha = req.body.password
 
 
-        let user = new Pessoa(1002,name,role,email,pass) 
-      
+        let user = new Funcionario(0,nome,idade,cpf,idDepartamento,idCargo,dataAdmissao,senha) 
 
-        await db.run(`INSERT INTO user(nome, cargo, email, senha)
+
+        await db.query(`INSERT INTO pessoa(nome, idade, cpf)
+            VALUES('${user.getNomePessoa()}',${user.getIdadePessoa()},'${user.getCpf()}')`);
+
+        const results = await db.query(`SELECT id FROM pessoa WHERE cpf = '${cpf}'`)
+        const result = results.rows
+
+
+        await db.query(`INSERT INTO funcionario (idPessoa, idCargo, idDepartamento, dataAdmissao, senha)
             VALUES(
-                '${user.getName()}',
-                '${user.getRole()}',
-                '${user.getEmail()}',
-                '${user.getPass()}')`);
+                ${result[0].id},
+                ${idCargo},
+                ${idDepartamento},
+                '${dataAdmissao}',
+                '${senha}'
+            )`);
 
-        await db.close()
 
         res.redirect(`/list-imob`)
 
     },
 
     async login(req,res){
-        const db = await Database()
-        const email = req.body.email
+
+        const cpf = req.body.cpf
         const password = req.body.password
 
-        const verifyUser = await db.all(`SELECT * FROM user WHERE email = '${email}'`)        
+        const results = await db.query(`SELECT p.cpf, f.senha FROM pessoa p INNER JOIN funcionario f on(p.id = f.idpessoa) WHERE cpf = '${cpf}'`)     
+        const result = results.rows
        
         try {
-            if(verifyUser[0].email == email && verifyUser[0].senha == password){
+            if(result[0].cpf == cpf && result[0].senha == password){
                 res.redirect('/list-imob')
             }else(
                 res.render('passincorrect')
