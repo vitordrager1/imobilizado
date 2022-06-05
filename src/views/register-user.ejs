@@ -21,30 +21,52 @@
         <%- include(`parts/header`)  %>
     </header>
     <main>
+        <h1>CADASTRO DE FUNCIONÁRIO</h1>
     
         <form action="/create-user" method="POST">
          
-            <div class="content">
-                <h1>CADASTRO DE FUNCIONÁRIO</h1>
+            <p>
+                <label for="nome">Digite o nome completo</label>
+                <input id="nome" type="text" name="nome">
+            </p>
+          
+            <p>
+                <label for="idade">Digite a idade</label>
+                <input id="idade" type="number" name="idade">
+            </p>
+      
+            <p>
+                <label for="cpf">Digite o cpf</label>
+                <input id="cpf" type="text" name="cpf">
+            </p>
 
-                <label for="name">Digite o nome completo</label>
-                <input id="name" type="text" name="name">
-                <label for="role">Digite o cargo</label>
-                <input id="role" type="text" name="role">
-                <label for="email">Digite o email</label>
-                <input id="email" type="text" name="email">
+            <p>
+                <label for="idDepartamento">id Depto</label>
+                <input id="idDepartamento" type="text" name="idDepartamento">
+            </p>
+        
+            <p>
+                <label for="idCargo">Digite o idCargo</label>
+                <input id="idCargo" type="text" name="idCargo">
+            </p>
+            
+            <p>
+                <label for="dataAdmissao">Digite o dataAdmissao</label>
+                <input id="dataAdmissao" type="text" name="dataAdmissao">
+            </p>
+            <p>
                 <label for="password">Digite a senha</label>
                 <input id="password" type="password" name="password">
-            </div>
+            </p>
+
+           
           
 
-            <div class="buttons">
-                <button>CADASTRAR</button>
-                <div class="button">
-                    <a href="/">Cancelar</a>
-                </div>
-
-            </div>
+            <p class="b-full-width">
+                <button>Cadastrar</button>
+                <button> <a href="/">Cancelar</a></button>    
+            </p>
+            
  
           
 

@@ -25,25 +25,42 @@
         <%- include(`parts/header`)  %>
     </header>
     <main>
+        <h1>ALTERAR DADOS DO IMOBILIZADO - <%= result[0].id %></h1>
     
-        <form action="/update-imob/<%= sql[0].id%>" method="POST">
+        <form action="/update-imob/<%= result[0].id%>" method="POST">
          
-            <div class="content">
-                <h1>ALTERAR DADOS DO IMOBILIZADO</h1>
 
-                <div class="imob"> <%= sql[0].id  %>    </h1></div>
+            <p>
+                <label for="idCategoria">Selecione a categoria</label>
+                <input id="idCategoria" type="number" name="idCategoria" value="<%=result[0].idcategoria%>">
+            </p>
+
+            <p>
+                <label for="numeroSerie">Numero de Série</label>
+                <input id="numeroSerie" type="text" name="numeroSerie" value="<%=result[0].numeroserie%>">
+            </p>
+            
+            <p>
+                <label for="notaFiscal">Nota Fiscal</label>
+                <input id="notaFiscal" type="text" name="notaFiscal" value="<%=result[0].notafiscal%>">
+            </p>
+            <p>
+                <label for="dataCompra">Data da compra</label>
+                <input id="dataCompra" type="text" name="dataCompra" value="<%=result[0].datacompra%>">
+            </p>
+            <p>
+                <label for="valorCompra">Valor da compra</label>
+                <input id="valorCompra" type="number" name="valorCompra" value="<%=result[0].valorcompra%>">
+            </p>
+            
+            <p class="full-width">
                 <label for="descricao">Digite a descrição</label>
-                <input id="descricao" type="text" name="descricao" value="<%= sql[0].descricao %>">
-                <label for="marca">Digite a marca</label>
-                <input id="marca" type="text" name="marca" value="<%=sql[0].marca%>">
-            </div>
-          
-
-            <div class="buttons">
+                <input id="descricao" type="text" name="descricao" value="<%=result[0].descricao%>">
+            </p>
+            <p class="b-full-width">
                 <button>ALTERAR</button>
-                <div class="button"><a href="/list-imob">Cancelar</a></div>
-            </div>
- 
+                <button> <a href="/">Cancelar</a></button>    
+            </p>
           
 
         </form>

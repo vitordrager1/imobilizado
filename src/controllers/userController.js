@@ -5,7 +5,7 @@
 // console.log(user)
 
 const Database = require("../db/config")
-const Pessoa = require ("../../public/scripts/class")
+const {Pessoa, Funcionario, Endereco, Cargo, Departamento} = require ("../../public/scripts/class")
 
 
 module.exports ={

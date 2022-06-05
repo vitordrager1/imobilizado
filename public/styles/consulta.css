@@ -1,9 +1,9 @@
 main{
-    width: 90%;
+    width: 100%;
     margin: auto;
     background: var(--white);
     border-radius: 1rem;
-    padding: 5rem;
+    padding: 2rem;
     border: 2px solid var(--purple);
     margin-top: 2rem;
 }
@@ -14,7 +14,7 @@ table{
 }
 
 table thead{
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: var(--gray);
     color: var(--dark);
 }
@@ -39,10 +39,14 @@ a:hover{
 }
 
 table tbody td:nth-child(1){
-    width: 200px;
+    width: 10rem;
 }
 table tbody td:nth-child(2){
-    width: 70rem;
+    width: 50rem;
     padding: 2rem 1rem 0rem 1rem;
+}
+table tbody td:nth-child(3){
+    width: 15rem;
+
 }
 

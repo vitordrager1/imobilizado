@@ -1,56 +1,70 @@
-const Database = require("../db/config")
-
+const db = require("../db/config")
+const {Imobilizado} = require("../../public/scripts/class")
 module.exports ={
     async create(req, res){
-        const db = await Database()
         
         const imobilizado = req.body.imobilizado
+        const idCategoria = req.body.idCategoria
+        const numeroSerie = req.body.numeroSerie
+        const notaFiscal = req.body.notaFiscal
+        const dataCompra = req.body.dataCompra
+        const valorCompra = req.body.valorCompra
         const descricao = req.body.descricao
-        const marca = req.body.marca
 
-        console.log(imobilizado)
+        let imob =  new Imobilizado(imobilizado,descricao,idCategoria,numeroSerie,notaFiscal,dataCompra,valorCompra)
+        
+        await db.query(`INSERT INTO imobilizado (id,descricao,idCategoria,numeroSerie,notaFiscal,dataCompra,valorCompra)
+        VALUES (
+            ${imob.getPlaqueta()},
+            '${imob.getDescricao()}',
+            ${imob.getIdCategoria()},
+            '${imob.getNumeroSerie()}',
+            '${imob.getNotaFiscal()}',
+            '${imob.getDataCompra()}',
+            ${imob.getValorCompra()}
+        )`);
 
-        await db.run(`INSERT INTO imobilizado(id, descricao, marca)
-            VALUES(
-                ${imobilizado}, 
-                '${descricao}', 
-                '${marca}'
-                )`);
-
-        await db.close()
 
         res.redirect(`/list-imob`)
 
-    },
+    }
+    ,
     async list(req, res){
-        const db = await Database()
-        const sql = await db.all(`SELECT * FROM imobilizado`)
-
-        res.render("list-imob", {sql})
+        const results = await db.query(`SELECT i.id,i.descricao,c.nome,i.numeroserie,i.notafiscal, TO_CHAR(i.datacompra, 'DD/MM/YYYY') as datacompra ,i.valorCompra FROM imobilizado i inner join categoriaimob c on(i.idcategoria = c.id)`)
+        const result = results.rows
+        res.render("list-imob", {result})
         
-    },
+    }
+    ,
 
     async alter(req, res){
-        const db = await Database()
         const id = req.params.imob
-        const sql = await db.all(`SELECT * FROM imobilizado WHERE id = ${id}`)
-
-        await db.close();
-        res.render("alter-imob", {sql})
+        const results = await db.query(`SELECT * FROM imobilizado WHERE id = ${id}`)
+        const result = results.rows
+        res.render("alter-imob", {result})
 
       
     },
 
     async update(req,res){
-        const db = await Database()
         const id = req.params.imob
+        const idCategoria = req.body.idCategoria
+        const numeroSerie = req.body.numeroSerie
+        const notaFiscal = req.body.notaFiscal
+        const dataCompra = req.body.dataCompra
+        const valorCompra = req.body.valorCompra
         const descricao = req.body.descricao
-        const marca = req.body.marca
-        await db.run(`UPDATE imobilizado SET descricao = "${descricao}", marca = "${marca}" WHERE id = "${id}"`);
+        await db.query(`UPDATE imobilizado SET descricao = '${descricao}', idcategoria = ${idCategoria}, numeroserie = '${numeroSerie}',
+        notafiscal = '${notaFiscal}',
+        datacompra = '${dataCompra}',
+        valorcompra = ${valorCompra} WHERE id = ${id}`);
 
-        await db.close()
 
         res.redirect("/list-imob")
+    },
+
+    async delete(req,res){
+        
     }
 
 

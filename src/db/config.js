@@ -1,8 +1,11 @@
-const sqlite3 = require("sqlite3")
-const {open} = require("sqlite")
+const {Pool} = require('pg')
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'COMOB',
+    password: 'drager1',
+    port: 5432,
 
-module.exports = () => 
-    open({
-        filename: './src/db/imob.sqlite',
-        driver: sqlite3.Database,
-    });
+})
+
+module.exports = pool;
