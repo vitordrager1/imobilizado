@@ -20,6 +20,9 @@ route.post('/update-imob/:imob', imobilizadoController.update)
 //USER GET-POST
 route.post('/login-user',userController.login)
 route.post('/create-user', userController.create)
+route.get('/list-user', userController.list)
+route.get('/alter-user/:cpf',userController.alter)
+route.post('/update-user',userController.update)
 
 
 

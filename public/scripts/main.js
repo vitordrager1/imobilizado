@@ -1,6 +1,9 @@
-export default function sendId(){
-    const id = document.getElementById("#btn")
+module.exports=function myF(id){
+    const cargo = id;
+    if(cargo == 3){
+        return 3;
+    }else{
+        return 4;
+    }
     
-    return window.localStorage.setItem('imob', 'id')
-
 }

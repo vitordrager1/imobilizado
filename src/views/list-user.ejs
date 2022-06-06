@@ -14,12 +14,19 @@
     
 
 
-    <title>COMOB - Consulta Imobilizado</title>
+    <title>COMOB - Consulta Funcionários</title>
 </head>
 
 <body>
-   
-    <header class="header">
+    <!-- <script>
+        function sendId(e){
+            const id = e.target.dataset.id
+    
+            window.localStorage.setItem('imob', `${id}`)
+            
+        }
+    </script> -->
+    <header>
         <%- include(`parts/header`)%>
     </header>
     
@@ -28,27 +35,25 @@
             <table>
                 <thead>
                     <tr>
-                        <td>IMOBILIZADO</td>
-                        <td>DESCRIÇÃO</td>
-                        <td>CATEGORIA</td>
-                        <td>NÚMERO DE SÉRIE</td>
-                        <td>NOTA FISCAL</td>
-                        <td>DATA COMPRA</td>
-                        <td>VALOR COMPRA</td>
+                        <td>NOME</td>
+                        <td>IDADE</td>
+                        <td>CPF</td>
+                        <td>DEPARTAMENTO</td>
+                        <td>CARGO</td>
+                        <td>DATA ADMISSAO</td>
                     </tr>
                 </thead>
                 <tbody>
                     
                     <% result.forEach(sqls => { %>
                         <tr>
-                            <td id="<%= sqls.id %>" data-id="<%=sqls.id%>"><%= sqls.id %></td>
-                            <td><%= sqls.descricao  %> </td>
-                            <td><%= sqls.nome  %> </td>
-                            <td><%= sqls.numeroserie  %> </td>
-                            <td><%= sqls.notafiscal  %> </td>
-                            <td><%= sqls.datacompra  %> </td>
-                            <td><%= sqls.valorcompra  %> </td>
-                            <td> <a href="/alter-imob/<%= sqls.id  %> "> Alterar</a> </td>
+                            <td><%= sqls.nome %></td>
+                            <td><%= sqls.idade%> </td>
+                            <td><%= sqls.cpf%> </td>
+                            <td><%= sqls.departamento%> </td>
+                            <td><%= sqls.cargo  %> </td>
+                            <td><%= sqls.dataadmissao  %> </td>
+                            <td> <a href="/alter-user/<%=sqls.cpf%> "> Detalhes</a> </td>
                         </tr>
                     <% }); %>
                 </tbody>
@@ -62,4 +67,5 @@
 
 
 </body>
+
 </html>

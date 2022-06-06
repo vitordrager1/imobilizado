@@ -30,9 +30,11 @@ module.exports ={
     }
     ,
     async list(req, res){
+        const id = req.body.id
+        console.log(id)
         const results = await db.query(`SELECT i.id,i.descricao,c.nome,i.numeroserie,i.notafiscal, TO_CHAR(i.datacompra, 'DD/MM/YYYY') as datacompra ,i.valorCompra FROM imobilizado i inner join categoriaimob c on(i.idcategoria = c.id)`)
         const result = results.rows
-        res.render("list-imob", {result})
+        res.render("list-imob", {result , id})
         
     }
     ,

@@ -1,16 +1,45 @@
-<div class="header">
-    <a href="/">
-        COMOB
-    </a>
-    <nav>
-        <ul>
-            <li>
-                <a href="/register-imob">CADASTRAR</a>
-            </li>
-            <li>
-                <a href="/list-imob">LISTAR</a>
-            </li>
-        </ul>
-    </nav>
+<% const cargo = localStorage.getItem("cargo") %>
+<% if(cargo == 3){ %>
+    <div class="header">
+        <a href="/">
+            COMOB
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/register-imob">CADASTRAR</a>
+                </li>
+                <li>
+                    <a href="/list-imob">LISTAR</a>
+                </li>
+                <li>
+                    <a href="/register-user">REGISTRAR NOVO FUNCIONÁRIO</a>
+                </li>
+                <li>
+                    <a href="/list-user">LISTAR FUNCIONÁRIOS</a>
+                </li>
+            </ul>
+        </nav>
+    
+    </div>
+<% }else{ %>
+    <div class="header">
+        <a href="/">
+            COMOB
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/register-imob">CADASTRAR NOVO IMOBILIZADO</a>
+                </li>
+                <li>
+                    <a href="/list-imob">LISTAR IMOBILIZADOS</a>
+                </li>
+                
+            </ul>
+        </nav>
+    
+    </div>
+<% } %>
 
-</div>
+
