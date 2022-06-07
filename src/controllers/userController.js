@@ -24,7 +24,8 @@ module.exports ={
         const senha = req.body.password
 
 
-        let user = new Funcionario(0,nome,idade,cpf,idDepartamento,idCargo,dataAdmissao,senha) 
+        try {
+            let user = new Funcionario(0,nome,idade,cpf,idDepartamento,idCargo,dataAdmissao,senha) 
 
 
         await db.query(`INSERT INTO pessoa(nome, idade, cpf)
@@ -45,6 +46,9 @@ module.exports ={
 
 
         res.redirect(`/list-imob`)
+        } catch (error) {
+            res.render('./error/dadosincorretos2')
+        }
 
     },
 
@@ -55,20 +59,21 @@ module.exports ={
 
         const results = await db.query(`SELECT p.cpf, f.senha, f.idcargo FROM pessoa p INNER JOIN funcionario f on(p.id = f.idpessoa) WHERE cpf = '${cpf}'`)     
         const result = results.rows
-        const id = result[0].idcargo
+        
        
         try {
+            const id = result[0].idcargo
             if(result[0].cpf == cpf && result[0].senha == password){
                 localStorage.setItem("cargo",id)
                 localStorage.setItem("cpf",cpf)
                 res.render('list-imob', {result})
 
             }else(
-                res.render('passincorrect')
+                res.render('./error/passincorrect')
             )
         } catch (error) {
             console.log('fora')
-            res.render('passincorrect')
+            res.render('./error/passincorrect')
         }
     },
     async list(req,res){
@@ -95,11 +100,15 @@ module.exports ={
         const idCargo = req.body.idCargo
         const dataAdmissao = req.body.dataAdmissao
 
+       try {
         const idps = await db.query(`SELECT id from pessoa where cpf = '${cpf}'`)
         const idp = idps.rows
         await db.query(`UPDATE pessoa SET nome = '${nome}', idade = '${idade}', cpf = '${cpf}' where cpf = '${cpf}'`)
         await db.query(`UPDATE funcionario SET idcargo = ${idCargo}, iddepartamento = ${idDepartamento}, dataadmissao = '${dataAdmissao}' where idpessoa = '${idp[0].id}'`)
         res.redirect('/list-user')
+       } catch (error) {
+           res.render('./error/dadosincorretos3')
+       }
     }
 
 
