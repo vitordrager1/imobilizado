@@ -2,8 +2,27 @@
     <head>
         <title> Senha incorreta</title>
         <script>
-            confirm("Preencha todos os campos")
-            window.location.replace('/register-imob')
+            
+            let url = window.location.href
+            let urlS = url.split("/")[3]
+            confirm(urlS)
+            if(urlS == 'create-imob'){
+                confirm('Preencha todos os campos!')
+                window.location.replace('/register-imob')
+
+            }else if(urlS == 'create-user'){
+                confirm('Preencha todos os campos!')
+                window.location.replace('/register-user')
+
+            }else if(urlS == 'update-imob'){
+                confirm('Preencha todos os campos!')
+                window.location.replace('/list-imob')
+            }
+
+            else if(urlS == 'update-user'){
+                confirm('Preencha todos os campos!')
+                window.location.replace('/list-user')
+            }
             
 
         </script>

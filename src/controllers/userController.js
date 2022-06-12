@@ -47,7 +47,7 @@ module.exports ={
 
         res.redirect(`/list-imob`)
         } catch (error) {
-            res.render('./error/dadosincorretos2')
+            res.render('./error/dadosincorretos')
         }
 
     },
@@ -107,7 +107,7 @@ module.exports ={
         await db.query(`UPDATE funcionario SET idcargo = ${idCargo}, iddepartamento = ${idDepartamento}, dataadmissao = '${dataAdmissao}' where idpessoa = '${idp[0].id}'`)
         res.redirect('/list-user')
        } catch (error) {
-           res.render('./error/dadosincorretos3')
+           res.render('./error/dadosincorretos')
        }
     }
 

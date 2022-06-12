@@ -12,6 +12,7 @@ module.exports ={
         const descricao = req.body.descricao
 
         try {
+
             let imob =  new Imobilizado(imobilizado,descricao,idCategoria,numeroSerie,notaFiscal,dataCompra,valorCompra)
           
 
@@ -30,6 +31,7 @@ module.exports ={
             res.redirect(`/list-imob`)
             
         } catch (error) {
+
             res.render('./error/dadosincorretos')
         }
 
@@ -73,7 +75,7 @@ module.exports ={
 
         res.redirect("/list-imob")
         } catch (error) {
-            res.render('./error/dadosincorretos4')
+            res.render('./error/dadosincorretos')
         }
     },
 
